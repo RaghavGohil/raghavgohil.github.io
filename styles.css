@@ -1,0 +1,114 @@
+*
+{
+    margin:0;
+    padding:0;
+    font-family: "Roboto Slab", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* modifying tags */
+
+body
+{
+    background-color: #191919;
+    color:rgb(224, 224, 224);
+    font-size:1.5rem;
+}
+
+hr
+{
+    border: 0.5px solid rgb(43, 43, 43);
+    width:80%;
+    margin:auto;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+section
+{
+    margin: 10vh;
+}
+
+a
+{
+    color:#FAD166;
+}
+
+/* others */
+
+#cursor
+{
+    position:absolute;
+    width:500px;
+    height:500px;
+    background: #161616;
+    background: radial-gradient(#191919, #161616);
+    border-radius: 50%;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    z-index:-1;
+}
+
+div:hover ~ #cursor
+{
+    transform: scale(0.2);
+}
+
+/* hero section */
+
+#hero
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:auto;
+    margin-right:auto;
+    width: 95vw;
+}
+
+#hero-profile-pic
+{
+    display: block;
+    margin:auto;
+    width:50%;
+    width:200px;
+    border-radius: 25px;
+}
+
+#hero-profile-content
+{
+    width:50%;
+    text-align: center;
+}
+
+/* socials */
+
+#socials
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#socials svg
+{
+    width:80px;
+    height:80px;
+    stroke:rgb(85, 85, 85);
+    transition:0.5s;
+}
+
+#socials svg:hover
+{
+    stroke:#FAD166;
+}
+
+/* page */
+
+#page
+{
+    width:60vw;
+    margin:auto;
+    text-align: center;
+}
