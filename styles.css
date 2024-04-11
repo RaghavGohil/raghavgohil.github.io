@@ -148,11 +148,9 @@ div:hover ~ #cursor
     transform:scale(1.2);
 }
 
-/* page */
+/* resume download */
 
-#page
+#resume-download
 {
-    width:60vw;
-    margin:auto;
     text-align: center;
 }
