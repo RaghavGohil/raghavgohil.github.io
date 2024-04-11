@@ -57,44 +57,79 @@ div:hover ~ #cursor
 
 /* hero section */
 
-#hero
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left:auto;
-    margin-right:auto;
-    width: 95vw;
+@media only screen and (min-width: 800px) {
+    #hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95vw;
+    }
+    #hero-profile-content {
+        width: 50%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 799px) {
+    #hero {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95vw;
+    }
+    #hero-profile-content {
+        width: 100%;
+        margin-top:10vh;
+        text-align: center;
+    }
 }
 
 #hero-profile-pic
 {
+    width:300px;
+    height:300px;
     display: block;
     margin:auto;
-    width:50%;
-    width:200px;
     border-radius: 25px;
+    transition: 1s;
+    background-image: url('/assets/my-photo.png');
+    background-size: auto 300px;
+    object-fit: fill;
 }
 
-#hero-profile-content
+#hero-profile-pic:hover
 {
-    width:50%;
-    text-align: center;
+    animation: hero-profile-pic-fade 1s ease-in-out forwards;
 }
+
+@keyframes hero-profile-pic-fade {
+    0%{opacity:1;}
+    50%
+    {
+        opacity: 0;
+    }
+    100% 
+    {
+        opacity: 1;
+        transform:rotate3D(1,1,1,45deg);
+        background-image: url('https://avatars.githubusercontent.com/u/71706645?v=4');
+    } 
+}
+
 
 /* socials */
 
 #socials
 {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 #socials svg
 {
-    width:80px;
-    height:80px;
+    width:50px;
     stroke:rgb(85, 85, 85);
     transition:0.5s;
 }
@@ -102,6 +137,7 @@ div:hover ~ #cursor
 #socials svg:hover
 {
     stroke:#FAD166;
+    transform:scale(1.2);
 }
 
 /* page */
