@@ -37,9 +37,18 @@ a
 
 /* others */
 
+#cursor-container
+{
+    width:100%;
+    height:100%;
+    position:absolute;
+    overflow: hidden;
+    z-index:-1;
+}
+
 #cursor
 {
-    position:absolute;
+    position:relative;
     width:500px;
     height:500px;
     background: #161616;
@@ -47,7 +56,6 @@ a
     border-radius: 50%;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
-    z-index:-1;
 }
 
 div:hover ~ #cursor

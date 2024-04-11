@@ -1,5 +1,9 @@
 const cursor = document.getElementById("cursor");
-document.onmousemove = (e)=>{
-    cursor.style.left = (e.pageX - 250) + "px";
-    cursor.style.top = (e.pageY - 250) + "px";
+
+function moveRandom()
+{
+    cursor.style.left =  Math.floor(Math.random() * document.body.clientWidth) + "px";
+    cursor.style.top = Math.floor(Math.random() * document.body.clientHeight)+ "px";
 }
+
+window.setInterval(moveRandom,2000)
