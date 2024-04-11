@@ -77,6 +77,8 @@ div:hover ~ #cursor
     }
     #hero-profile-content {
         width: 50%;
+        padding-left:10vh;
+        padding-right: 10vh;
         text-align: center;
     }
 }
