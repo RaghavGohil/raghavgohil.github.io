@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog | Raghav Gohil</title>
+        <meta name="description" content="Academic blog of Raghav Harshad Gohil, Carleton University.">
+        <link rel="icon" type="image/jpeg" href="https://avatars.githubusercontent.com/u/71706645?v=4">
+        <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/71706645?v=4">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+        <link href="../styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a href="../">&larr; Back</a>
+        </nav>
+
+        <main>
+            <section class="page-head">
+                <h1>Blog</h1>
+            </section>
+
+            <section>
+                <ul class="post-list" id="post-list">
+                    <li class="muted">Loading posts&hellip;</li>
+                </ul>
+            </section>
+        </main>
+
+
+        <script>
+            const list = document.getElementById("post-list");
+
+            function formatDate(iso)
+            {
+                const d = new Date(iso + "T00:00:00");
+                return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+            }
+
+            fetch("posts.json", { cache: "no-cache" })
+                .then(r => r.json())
+                .then(posts =>
+                {
+                    posts = posts.filter(p => !p.draft).sort((a, b) => b.date.localeCompare(a.date));
+                    if (posts.length === 0)
+                    {
+                        list.innerHTML = '<li class="muted">No posts yet.</li>';
+                        return;
+                    }
+                    list.innerHTML = "";
+                    for (const p of posts)
+                    {
+                        const li = document.createElement("li");
+                        li.innerHTML =
+                            `<span class="post-date">${formatDate(p.date)}</span>` +
+                            `<a class="post-title" href="post.html?p=${encodeURIComponent(p.slug)}"></a>` +
+                            (p.summary ? `<p class="post-summary"></p>` : "");
+                        li.querySelector(".post-title").textContent = p.title;
+                        if (p.summary) li.querySelector(".post-summary").textContent = p.summary;
+                        list.appendChild(li);
+                    }
+                })
+                .catch(() =>
+                {
+                    list.innerHTML = '<li class="muted">Could not load posts.</li>';
+                });
+        </script>
+    </body>
+</html>

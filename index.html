@@ -3,35 +3,426 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Raghav Gohil | Portfolio</title>
-        <link rel="icon" type="image/x-icon" href="/assets/profile-pic.png">
+        <title>Raghav Gohil</title>
+        <meta name="description" content="Raghav Harshad Gohil — M.Sc. student in Computer Science (Data Science, Analytics and AI) at Carleton University. Member of the ALT Games Lab. AI and games, computer vision, remote sensing and applied machine learning.">
+        <link rel="icon" type="image/jpeg" href="https://avatars.githubusercontent.com/u/71706645?v=4">
+        <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/71706645?v=4">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
     </head>
     <body>
-        <!-- cursor -->
-        <div id="cursor-container"><div id="cursor"></div></div>
-        <script src="cursor.js"></script>
-        <section id="hero">
-            <!-- <img id="hero-profile-pic" src="https://avatars.githubusercontent.com/u/71706645?v=4"> -->
-            <!-- <img id="hero-profile-pic" src="/assets/my-photo.png"> -->
-            <div class="hero-profile-pic-container"><div id="hero-profile-pic"></div><div id="hero-profile-pic-glow"></div></div>
-            <div id="hero-profile-content">
-                <h1>Raghav Gohil aka Th3L0w3Nd</h1>
-                <hr>
-                <p>I am a student from <a href="https://www.djsce.ac.in/">DJSCE</a>, interested in game and web dev, science, digital arts and music production.</p>
-            </div>
-        </section> 
-        <section id="socials">
-            <a href="https://www.instagram.com/raghav_gohil_404/"><svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none" stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M16.5 7.5l0 .01" /></svg></a>
-            <a href="https://www.linkedin.com/in/raghav-gohil-18a88a258/"><svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none" stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg></a>
-            <a href="https://twitter.com/RaghobaSpams"><svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg></a>
-            <a href="mailto:raghavgohil2004@gmail.com"><svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="none"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg></a>
-        </section>
-        <section id="resume-download">
-            You can download my resume from <a href="https://docs.google.com/document/d/1E7OpBbh6nYtWkoxOE-9DptZS__aU-AIR/edit?usp=sharing&ouid=106211092595944268106&rtpof=true&sd=true">here</a>.
-        </section>
+        <nav>
+            <a href="#about">About</a>
+            <a class="nav-highlight" href="blog/">Blog</a>
+            <a href="#news">News</a>
+            <a href="#publications">Publications</a>
+            <a href="#research">Research</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#honors">Honors</a>
+            <a href="#projects">Projects</a>
+            <a href="#activities">Activities</a>
+        </nav>
+
+        <main>
+            <header id="about">
+                <img class="photo" src="https://avatars.githubusercontent.com/u/71706645?v=4" alt="Photo of Raghav Gohil">
+                <div class="intro">
+                    <h1>Raghav Harshad Gohil</h1>
+                    <p class="affiliation">
+                        M.Sc. Student, Computer Science (Data Science, Analytics and AI)<br>
+                        ALT Games Lab, School of Computer Science, Carleton University<br>
+                        Ottawa, Ontario, Canada
+                    </p>
+                    <p class="contact">
+                        <span class="label">Email:</span> <a href="mailto:raghavharshadgohil@cmail.carleton.ca">raghavharshadgohil@cmail.carleton.ca</a>
+                    </p>
+                    <p class="links">
+                        [<a href="https://docs.google.com/document/d/1KZqA132iDrnBKh-6coL3dgEJMXkEJ5XB/edit?usp=sharing&ouid=118444641699332827628&rtpof=true&sd=true">CV</a>]
+                        [<a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=APjjwub7mrKJ2H-JyKzECnMKxPB45945bkVsB8djdXH6EnmdZlIc_VjereVUvtaRPhPC5LccAvVNQe8iAvyqsLWThfxp&user=Q8cYllYAAAAJ">Google Scholar</a>]
+                        [<a href="https://github.com/RaghavGohil">GitHub</a>]
+                        [<a href="https://www.linkedin.com/in/raghav-gohil-18a88a258/">LinkedIn</a>]
+                        [<a href="blog/">Blog</a>]
+                    </p>
+                </div>
+            </header>
+
+            <section>
+                <p>
+                    I am a Master's student in Computer Science (Data Science, Analytics and AI) at Carleton
+                    University, where I am a member of the Alternative Learning Technologies and Games
+                    (ALT Games) Lab, advised by Prof. Edward Melcer. I received my B.Tech. in Artificial Intelligence and Machine Learning from
+                    Dwarkadas J. Sanghvi College of Engineering (University of Mumbai), graduating with a CGPA
+                    of 9.04/10.
+                </p>
+                <p>
+                    My work sits at the intersection of <strong>artificial intelligence and games</strong>. My
+                    previous research was in <strong>computer vision for remote sensing</strong>: detecting and
+                    tracking maritime vessels across SAR and optical satellite imagery, and reconstructing lunar
+                    terrain from orbital images. I have also worked on deep learning for pediatric speech
+                    assessment. Alongside research, I have spent years building games, game engines and game AI,
+                    and I run an indie game development studio, Bluefyre Studio.
+                </p>
+                <p class="interests">
+                    <strong>Research interests:</strong> AI for games, human&ndash;computer interaction,
+                    computer vision, remote sensing and geospatial AI, applied deep learning.
+                </p>
+            </section>
+
+            <section id="news">
+                <h2>News</h2>
+                <ul class="news">
+                    <li><span class="news-date">Sep 2026</span> <span class="news-text">Joined the ALT Games Lab at Carleton University as a Master's student, advised by Prof. Edward Melcer.
+                        <span class="entry-links">[<a href="https://carleton.ca/scs/people/edward-melcer/">Prof. Melcer</a>]</span></span></li>
+                    <li><span class="news-date">Nov 2025</span> <span class="news-text">First-author paper on AutoDEAP, a CNN&ndash;Transformer model for pediatric speech misarticulation detection, published in <em>Advances in Consumer Research</em>.
+                        <span class="entry-links">[<a href="https://acr-journal.com/article/auto-deap-cnn-transformer-based-hybrid-model-for-automated-pediatric-speech-misarticulation-detection-1822/">Paper</a>]</span></span></li>
+                    <li><span class="news-date">Nov 2025</span> <span class="news-text">Ranked top 14 nationally at the NCIIPC&ndash;DPIIT&ndash;FITT AI Grand Challenge, deploying our maritime domain awareness system on NTRO servers at IIT Delhi.
+                        <span class="entry-links">[<a href="https://credsverse.com/credentials/d568a68a-6ca8-437a-9ffd-882e2baf6cf8?preview=1">Credential</a>]</span></span></li>
+                    <li><span class="news-date">Aug 2025</span> <span class="news-text">Grand finalist (top 9 nationally) at the ISRO Bharatiya Antariksh Hackathon 2025 for high-resolution lunar DEMs, presented at NRSC Hyderabad.
+                        <span class="entry-links">[<a href="https://www.isro.gov.in/BAH2025_NRSC_Hyderabad.html">Event</a>]</span></span></li>
+                    <li><span class="news-date">Jan 2025</span> <span class="news-text">Our game <em>NoPop!</em> won Global Game Jam 2025 at Underdogs.
+                        <span class="entry-links">[<a href="https://www.linkedin.com/feed/update/urn:li:activity:7289711469812711425/">Announcement</a>]</span></span></li>
+                    <li><span class="news-date">Feb 2024</span> <span class="news-text"><em>Starfall: Odyssey</em> won Teknack 2024 and was published on the Google Play Store.
+                        <span class="entry-links">[<a href="https://teknack.in/">Event</a>]</span></span></li>
+                </ul>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+                <ul class="entries">
+                    <li>
+                        <span class="title">AutoDEAP: CNN-Transformer Based Hybrid Model for Automated Pediatric Speech Misarticulation Detection</span><br>
+                        <strong>Raghav Gohil</strong>, Jinnal Raghwani, Rasika Adiseshan, Kanak Kadulkar, Gargi Rane, Yashvi Savla, Aruna U. Gawade, Nilesh T. Rathod<br>
+                        <em>Advances in Consumer Research</em>, Vol. 2, Issue 5, pp. 1373&ndash;1385, November 2025.<br>
+                        <span class="entry-links">
+                            [<a href="https://acr-journal.com/article/auto-deap-cnn-transformer-based-hybrid-model-for-automated-pediatric-speech-misarticulation-detection-1822/">Paper</a>]
+                            [<a href="https://acr-journal.com/article/download/pdf/1822/">PDF</a>]
+                            [<a href="https://openurl.ebsco.com/EPDB%3Agcd%3A14%3A17574430/detailv2?sid=ebsco%3Aplink%3Acrawler-gcd&amp;id=ebsco%3Agcd%3A190224733&amp;crl=c&amp;jrnl=00989258&amp;link_origin=scholar.google.com">EBSCO</a>]
+                            [<a href="https://github.com/RaghavGohil/auto-articulation-screening-backend">Code</a>]
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="research">
+                <h2>Research Projects</h2>
+                <ul class="entries">
+                    <li>
+                        <span class="title">Kitagawa: Multi-Sensor Maritime Domain Awareness</span>
+                        <span class="date">Sep 2025 &ndash; Jul 2026</span><br>
+                        <em>B.Tech. final year project; NCIIPC&ndash;DPIIT&ndash;FITT AI Grand Challenge (top 14 nationally)</em>
+                        <ul class="details">
+                            <li>Docker-based, GPU-accelerated inference pipeline using YOLOv11n for ship detection on Sentinel-1 SAR (trained on OpenSARShip v2) and Sentinel-2 electro-optical imagery.</li>
+                            <li>Post-processing with non-maximum suppression, land masking against GSHHG shoreline polygons, and ConvNeXt-based cloud filtering for optical scenes.</li>
+                            <li>Detection timestamping from SAR calibration vectors and EO granule metadata; correlation of detections with interpolated AIS vessel tracks for trajectory analysis.</li>
+                            <li>Geospatial processing with Rasterio, GDAL and GeoPandas; Prefect-based workflow orchestration for scalable, reproducible deployment. Deployed end-to-end on NTRO servers at IIT Delhi.</li>
+                            <li>Quantitative results are not public, as the work was carried out for a national defence challenge.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://github.com/RaghavGohil/kitagawa">Code</a>]
+                            [<a href="https://kitagawamda.vercel.app">Project page</a>]
+                            [<a href="https://credsverse.com/credentials/d568a68a-6ca8-437a-9ffd-882e2baf6cf8?preview=1">Credential</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">High-Resolution Lunar DEMs via Photoclinometry</span>
+                        <span class="date">Jun 2025 &ndash; Aug 2025</span><br>
+                        <em>ISRO Bharatiya Antariksh Hackathon 2025, grand finalist (top 9 nationally)</em>
+                        <ul class="details">
+                            <li>Developed and presented a novel approach for generating high-resolution lunar digital elevation models using photoclinometry (shape-from-shading).</li>
+                            <li>Presented at the Indian Space Research Organisation's National Remote Sensing Centre, Hyderabad. Worked with ISSDC lunar data products.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://www.isro.gov.in/BAH2025_NRSC_Hyderabad.html">Event</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">AutoDEAP: Pediatric Speech Misarticulation Detection</span>
+                        <span class="date">Oct 2024 &ndash; Aug 2025</span>
+                        <ul class="details">
+                            <li>A hybrid CNN&ndash;Transformer model that fuses MFCC and Mel-spectrogram audio features with speaker metadata to detect speech sound errors in children aged 5&ndash;10, supporting early and remote screening by speech-language pathologists.</li>
+                            <li>Trained on 7,381 annotated samples; reached 72.90% accuracy and a 71.36% F1 score, outperforming ResNet (63.48%) and plain CNN (71.33%) baselines.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://acr-journal.com/article/auto-deap-cnn-transformer-based-hybrid-model-for-automated-pediatric-speech-misarticulation-detection-1822/">Paper</a>]
+                            [<a href="https://github.com/RaghavGohil/auto-articulation-screening-backend">Code</a>]
+                            [<a href="https://github.com/RaghavGohil/aas-website">Web app</a>]
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="experience">
+                <h2>Experience</h2>
+                <ul class="entries">
+                    <li>
+                        <span class="title">Game Developer Intern</span>, Deep Learning Titans (now Suproc)
+                        <span class="date">Feb 2025 &ndash; May 2025</span>
+                        <ul class="details">
+                            <li>Developed and integrated core gameplay systems over a three-month internship, collaborating closely with the Game Director to deliver immersive player experiences under a tight deadline.</li>
+                            <li>Implemented AI-driven NPC behaviours (LLM-based and steering systems) and managed team GitHub integrations to keep the codebase stable.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://drive.google.com/file/d/1bj2n4pC6J9144OLp7Caokghq_TPuRYX4/view?usp=sharing">Certificate</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Core Committee Member</span>, DJS ACM SIGAI
+                        <span class="date">Oct 2023 &ndash; May 2025</span>
+                        <ul class="details">
+                            <li>Contributed as a MERN stack developer and graphic designer for the student chapter of ACM's Special Interest Group on Artificial Intelligence.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://www.linkedin.com/company/djsce-acm-sigai-student-chapter">Chapter</a>]
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="education">
+                <h2>Education</h2>
+                <ul class="entries">
+                    <li>
+                        <span class="title">Carleton University</span>, Ottawa, Canada
+                        <span class="date">2026 &ndash; present</span><br>
+                        Master's in Computer Science (Data Science, Analytics and AI)<br>
+                        ALT Games Lab, advised by Prof. Edward Melcer<br>
+                        <span class="entry-links">
+                            [<a href="https://carleton.ca/scs/">School of Computer Science</a>]
+                            [<a href="https://carleton.ca/scs/people/edward-melcer/">Advisor</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Dwarkadas J. Sanghvi College of Engineering</span>, University of Mumbai, India
+                        <span class="date">2022 &ndash; 2026</span><br>
+                        B.Tech. in Artificial Intelligence and Machine Learning. CGPA: 9.04/10<br>
+                        <span class="entry-links">
+                            [<a href="https://www.djsce.ac.in/">Website</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Jiten Mody Junior College of Arts, Commerce and Science</span>, Maharashtra State Board<br>
+                        Higher Secondary Certificate. Aggregate: 82.83%
+                    </li>
+                    <li>
+                        <span class="title">Pawar Public School</span>, ICSE Board, India<br>
+                        Secondary School Certificate. Aggregate: 86.33%
+                    </li>
+                </ul>
+            </section>
+
+            <section id="honors">
+                <h2>Honors and Awards</h2>
+                <ul class="entries">
+                    <li>
+                        <span class="title">NCIIPC, DPIIT, FITT AI Grand Challenge</span>
+                        <span class="date">Sep 2025 &ndash; Nov 2025</span><br>
+                        <em>Top 14 nationally</em><br>
+                        Implemented an end-to-end Dockerized maritime domain awareness solution on NTRO servers at IIT Delhi, ranking among the top 14 startups nationally in a defence and intelligence challenge.<br>
+                        <span class="entry-links">
+                            [<a href="https://credsverse.com/credentials/d568a68a-6ca8-437a-9ffd-882e2baf6cf8?preview=1">Credential</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">ISRO Bharatiya Antariksh Hackathon 2025</span>
+                        <span class="date">Jun 2025 &ndash; Aug 2025</span><br>
+                        <em>Grand finalist, top 9 nationally</em><br>
+                        Created and presented a novel approach for high-resolution lunar DEMs with photoclinometry at ISRO's National Remote Sensing Centre, Hyderabad.<br>
+                        <span class="entry-links">
+                            [<a href="https://www.isro.gov.in/BAH2025_NRSC_Hyderabad.html">Event</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Global Game Jam 2025 at Underdogs</span>
+                        <span class="date">Jan 2025 &ndash; Feb 2025</span><br>
+                        <em>Winner</em><br>
+                        As game programmer and integrator, balanced art, music and design for the award-winning game <em>NoPop!</em>, celebrated at Underdogs, creators of the PlayStation 5 title <em>Mukti</em>.<br>
+                        <span class="entry-links">
+                            [<a href="https://www.linkedin.com/feed/update/urn:li:activity:7289711469812711425/">Announcement</a>]
+                            [<a href="https://github.com/RaghavGohil/global-game-jam-2025">Code</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Teknack 2024</span>, Don Bosco Institute of Technology
+                        <span class="date">Nov 2023 &ndash; Feb 2024</span><br>
+                        <em>Winner</em><br>
+                        Led a team of three as programmer and integrator to build an award-winning Android game, published on the Google Play Store.<br>
+                        <span class="entry-links">
+                            [<a href="https://teknack.in/">Event</a>]
+                            [<a href="https://youtu.be/Rj5haTF2aRA">Video</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">NVIDIA Deep Learning Institute Certificate</span>
+                        <span class="date">Nov 2025</span><br>
+                        <em>Certification</em><br>
+                        Fundamentals of Accelerated Computing with CUDA Python (CuPy).
+                    </li>
+                </ul>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+
+                <h3>Game Engines</h3>
+                <ul class="entries">
+                    <li>
+                        <span class="title">Imagine3D</span> &mdash; C++17, OpenGL, Dear ImGui
+                        <span class="date">Dec 2024 &ndash; Jan 2025</span>
+                        <ul class="details">
+                            <li>A 3D game engine using an Entity Component System architecture with a layered design: application, engine core (logging, events, input), renderer and platform layer.</li>
+                            <li>Model loading (Assimp), UV texture mapping, shaders and advanced lighting for real-time 3D rendering.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://bluefyregames.vercel.app/imagine">Project page</a>]
+                            [<a href="https://github.com/RaghavGohil/imagine">Code</a>]
+                        </span>
+                    </li>
+                </ul>
+
+                <h3>Games</h3>
+                <ul class="entries">
+                    <li>
+                        <span class="title">Starfall: Odyssey</span> &mdash; Unity, C#, Android
+                        <span class="date">Nov 2023 &ndash; Feb 2024</span>
+                        <ul class="details">
+                            <li>Led a team of three as programmer and integrator to build an award-winning Android game at Teknack 2024 (Don Bosco Institute of Technology), published on the Google Play Store.</li>
+                            <li>Implemented LeanTween animations, object pooling, context-based steering behaviour AI, and performance optimizations.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://youtu.be/Rj5haTF2aRA">Video</a>]
+                            [<a href="https://github.com/RaghavGohil/Starfall">Code</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">NoPop!</span> &mdash; Godot
+                        <span class="date">Jan 2025 &ndash; Feb 2025</span><br>
+                        Winning game at Global Game Jam 2025 (Underdogs), made on the theme &ldquo;bubble&rdquo;.<br>
+                        <span class="entry-links">
+                            [<a href="https://github.com/RaghavGohil/global-game-jam-2025">Code</a>]
+                            [<a href="https://www.linkedin.com/feed/update/urn:li:activity:7289711469812711425/">Announcement</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Top-Down Sword Fighting Game (Big Baby Goes Wild)</span>
+                        <span class="date">Jul 2024</span>
+                        <ul class="details">
+                            <li>Game programmer for the WTF &times; IGDC online game jam, building a complete game in 48 hours with a team of three.</li>
+                            <li>Iterated on features based on playtesting feedback and resolved bugs to deliver a polished build within the deadline.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://gamersinunity-studio.itch.io/big-baby-goes-wild">Play</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Among Beans</span> &mdash; Unity 3D, Photon Networking
+                        <span class="date">Feb 2021 &ndash; Sep 2021</span>
+                        <ul class="details">
+                            <li>A 3D online multiplayer take on <em>Among Us</em>.</li>
+                            <li>10.5K+ views and 4.2K+ downloads worldwide.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://bluefyrestudio.itch.io/among-us-3damong-beans">Play</a>]
+                            [<a href="https://github.com/RaghavGohil/amongbeans">Code</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Ethical Hacking &amp; Cybersecurity Game</span>
+                        <span class="date">Oct 2020</span>
+                        <ul class="details">
+                            <li>A puzzle game designed and developed in one day for a game jam on ethical hacking and cybersecurity.</li>
+                            <li>Interactive challenges that introduce and reinforce core ethical hacking principles through gameplay.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://bluefyrestudio.itch.io/hacking-cybersecuritygame">Play</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Pixelsquare's Adventures</span>
+                        <span class="date">Sep 2020 &ndash; Oct 2020</span>
+                        <ul class="details">
+                            <li>A <em>Geometry Dash</em>&ndash;inspired 2D side-scrolling platformer with fast-paced, beat-synchronized gameplay.</li>
+                            <li>Rhythm-based level design and responsive controls for timing accuracy.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://bluefyrestudio.itch.io/pixelsquares-adventures">Play</a>]
+                        </span>
+                    </li>
+                </ul>
+
+                <h3>Software and Web</h3>
+                <ul class="entries">
+                    <li>
+                        <span class="title">den</span> &mdash; Python CLI/TUI
+                        <span class="date">Apr 2026 &ndash; May 2026</span><br>
+                        A terminal-first tool for capturing and retrieving context scoped to a project, with a CLI, an interactive TUI and editor integration. Distributed on PyPI (<code>den-python</code>), the AUR and a Debian repository.<br>
+                        <span class="entry-links">
+                            [<a href="https://github.com/RaghavGohil/den">Code</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Foodalyze</span> &mdash; End-to-end nutrition analysis platform
+                        <span class="date">May 2025</span>
+                        <ul class="details">
+                            <li>Full-stack web application that scans food barcodes, retrieves product data via the Open Food Facts API, and uses an LLM (Gemini) to generate personalized nutritional insights based on user-defined diets and health preferences.</li>
+                            <li>Admin portal, data persistence with Prisma and SQL, analytics dashboards with graphs, and a server-rendered Handlebars frontend.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://github.com/RaghavGohil/foodalyze">Code</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">The Low End Studio</span> &mdash; Game development blog
+                        <span class="date">Mar 2023 &ndash; Nov 2023</span>
+                        <ul class="details">
+                            <li>A game-development blogging platform built from scratch with Node.js, Express.js, MongoDB and Handlebars.</li>
+                            <li>Fully designed in Figma to help learners understand game development concepts.</li>
+                        </ul>
+                        <span class="entry-links">
+                            [<a href="https://github.com/RaghavGohil/thelowendstudiowebsiteproduction">Code</a>]
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+
+            <section id="activities">
+                <h2>Other Activities</h2>
+                <ul class="entries">
+                    <li>
+                        <span class="title">Bluefyre Studio</span> &mdash; Indie game development studio<br>
+                        My game development studio, under which I have published multiple titles on the Google Play Store and
+                        itch.io, including <em>Among Beans</em>, <em>Pixelsquare's Adventures</em> and the
+                        <em>Ethical Hacking &amp; Cybersecurity Game</em>, and home to the Imagine3D engine.<br>
+                        <span class="entry-links">
+                            [<a href="https://bluefyrestudio.vercel.app">Website</a>]
+                            [<a href="https://bluefyrestudio.itch.io/">itch.io</a>]
+                            [<a href="https://bluefyregames.vercel.app/imagine">Imagine3D</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Digital art</span><br>
+                        Game art, UI assets and illustration.<br>
+                        <span class="entry-links">
+                            [<a href="https://www.instagram.com/raghav_gohil_404/">Instagram</a>]
+                            [<a href="https://www.deviantart.com/raghavgohil/gallery">DeviantArt</a>]
+                        </span>
+                    </li>
+                    <li>
+                        <span class="title">Music production</span><br>
+                        Original music for my games and personal projects.<br>
+                        <span class="entry-links">
+                            [<a href="https://open.spotify.com/artist/2q1IRXrkT25tboXxqPffk0">Spotify</a>]
+                        </span>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            Last updated 25 September 2026.
+        </footer>
     </body>
 </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog | Raghav Gohil</title>
+        <link rel="icon" type="image/jpeg" href="https://avatars.githubusercontent.com/u/71706645?v=4">
+        <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/71706645?v=4">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" rel="stylesheet">
+        <link href="../styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <a href="./">&larr; Back</a>
+        </nav>
+
+        <main>
+            <article class="post">
+                <header class="post-head">
+                    <h1 id="post-title">Loading&hellip;</h1>
+                    <p class="post-meta" id="post-meta"></p>
+                </header>
+                <div class="post-body" id="post-body"></div>
+            </article>
+        </main>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            const titleEl = document.getElementById("post-title");
+            const metaEl = document.getElementById("post-meta");
+            const bodyEl = document.getElementById("post-body");
+            const slug = new URLSearchParams(location.search).get("p");
+
+            function formatDate(iso)
+            {
+                const d = new Date(iso + "T00:00:00");
+                return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+            }
+
+            function notFound()
+            {
+                document.title = "Post not found | Raghav Gohil";
+                titleEl.textContent = "Post not found";
+                bodyEl.innerHTML = '<p>This post does not exist. <a href="./">See all posts</a>.</p>';
+            }
+
+            // Markdown would mangle LaTeX (underscores, backslashes), so math is swapped
+            // out for placeholders before parsing and put back afterwards for KaTeX.
+            function renderMarkdown(src)
+            {
+                const math = [];
+                const stash = m => { math.push(m); return `@@MATH${math.length - 1}@@`; };
+                src = src
+                    .replace(/\$\$[\s\S]+?\$\$/g, stash)
+                    .replace(/\\\[[\s\S]+?\\\]/g, stash)
+                    .replace(/\\\([\s\S]+?\\\)/g, stash)
+                    .replace(/(^|[^\\$])\$(?!\s)([^\n$]+?)(?<!\s)\$/g, (m, pre, body) => pre + stash("$" + body + "$"));
+                let html = marked.parse(src);
+                return html.replace(/@@MATH(\d+)@@/g, (m, i) =>
+                    math[i].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+            }
+
+            if (!slug || !/^[a-z0-9-]+$/.test(slug))
+            {
+                notFound();
+            }
+            else
+            {
+                Promise.all([
+                    fetch("posts.json", { cache: "no-cache" }).then(r => r.json()),
+                    fetch(`posts/${slug}.md`, { cache: "no-cache" }).then(r => r.ok ? r.text() : Promise.reject())
+                ])
+                .then(([posts, md]) =>
+                {
+                    const post = posts.find(p => p.slug === slug) || { title: slug, date: "" };
+                    document.title = `${post.title} | Raghav Gohil`;
+                    titleEl.textContent = post.title;
+                    metaEl.textContent = post.date ? formatDate(post.date) : "";
+                    if (post.summary)
+                    {
+                        const meta = document.createElement("meta");
+                        meta.name = "description";
+                        meta.content = post.summary;
+                        document.head.appendChild(meta);
+                    }
+
+                    bodyEl.innerHTML = renderMarkdown(md);
+                    renderMathInElement(bodyEl, {
+                        delimiters: [
+                            { left: "$$", right: "$$", display: true },
+                            { left: "\\[", right: "\\]", display: true },
+                            { left: "$", right: "$", display: false },
+                            { left: "\\(", right: "\\)", display: false }
+                        ],
+                        throwOnError: false
+                    });
+                    bodyEl.querySelectorAll("pre code").forEach(el => hljs.highlightElement(el));
+                })
+                .catch(notFound);
+            }
+        </script>
+    </body>
+</html>
